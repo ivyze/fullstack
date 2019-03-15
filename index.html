@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="./css/reset.css"  />
+    <link rel="stylesheet" href="./css/header.css"  />
+    <link rel="stylesheet" href="./css/index.css"  />
+    <link rel="stylesheet" href="./css/footer.css"  />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"src="./js/index.js"></script>
+    <script type="text/javascript"src="./js/valueCheck.js"></script>
+    <meta name="viewport" content="width=device-width"/>
+    <meta charset="utf-8">
+    <title>My First Web Service</title>
+  </head>
+  <body>
+<div id="viewtype">
+  <a href="/myservice/me.html" id="meLink">me</a>
+  <a href="/myservice/all.html" id="allLink">all</a>
+</div>
+<header>
+  <div id="myService">My First Web Service</div>
+  <!-- //로그인후 -->
+  <div id="myName">
+    <p>안녕하세요 박정원님</p>
+    <div id="logoutBox">
+      <input type="button" name="logoutbtn" value="로그아웃"/>
+    </div>
+ </div>
+  <!-- //로그인전 -->
+  <div id="loginForm" >
+      <form name="loginForm" method="post" action="./login.php" >
+          <div id="loginEmailArea">
+            <label for="loginEmail">E-mail</label>
+              <div class="logInputBox">
+                  <input type="email" id=loginEmail name="email" placeholder="이메일"/>
+              </div>
+          </div>
+          <div id="loginPwArea">
+              <label for="loginPw">Password</label>
+                <div class="logInputBox">
+                    <input type="password" id="loginPw" name="userPW" placeholder="비밀번호 8자리"/>
+                </div>
+          </div>
+          <div class="loginSubmitBox">
+            <input type="submit" id="loginSubmit" value="로그인"/>
+          </div>
+        </form>
+  </div>
+</header>
+<!-- container -->
+<div id="container">
+  <section id="introSite">
+  <div id="siteComment">
+    내가 만드는<br>
+    첫번째 웹서비스에 <br>
+    어서오세요 <br>
+  </div>
+  <div id="signUpBtn"><p>가입하기</p></div>
+  </section>
+  <section id="signup">
+    <div id="signupCenter">
+      <form id="signUpForm" action="./database/myMember.php" method="post">
+          <div class="row">
+            <div class="inputBox">
+              <input type="text" name="userName" id="userName" placeholder="이름"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="inputBox">
+          <input type="email" name="userEmail" id="userEmail" placeholder="이메일"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="inputBox">
+              <input type="password" name="userPw" id="userPw" placeholder="이름"/>
+            </div>
+          </div>
+            <div class="row">
+              <label>생일</label>
+              <div class="selectBox">
+                <select class="birthYear" name="birthYear">
+                  <option value="">연도</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                </select>
+              </div>
+              <div class="selectBox selectBoxMargin" >
+                <select class="birthMonth" name="birthMonth">
+                  <option value="">월</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="selectBox">
+                <select class="birthDay" name="birthDay">
+                  <option value="">일</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+          <div class="row genderRow">
+            <div class="genderLabel">
+              <label for="gW" id="gMW">여성</label>
+              <label for="gM" id="gMM">남성</label>
+            </div>
+            <input type="radio" name="gender" class="gender" id="gW" value="w"/>
+            <input type="radio" name="gender" class="gender" id="gM" value="m"/>
+          </div>
+          <div class="row">
+            <p id="valueError"></p>
+          </div>
+          <div class="row">
+            <div class="submitBox">
+              <input type="submit" id="signUpSubmit" value="가입하기"/>
+            </div>
+          </div>
+          <input type="hidden" name="mode" value="save"/>
+      </form>
+      <div id="goToLoginBtn">
+        <p>로그인하기</p>
+      </div>
+    </div>
+  </section>
+</div>
+<footer>
+<p>my first web page</p>
+</footer>
+  </body>
+</html>
